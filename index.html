@@ -9,6 +9,25 @@
   <title>Project: Library by Adrian Moncada</title>
 </head>
 <body>
-  
+  <input type="text" name="text" id="inputText"/>
+  <button onclick="addBookToLibrary();">Add</button>
+  <button class="open-button" onclick="openForm()">+</button>
+
+  <div class="form-popup" id="myForm">
+  <form class="form-container">
+    <label for="bookTitle"><b>Book Title</b></label>
+    <input type="text" placeholder="Title" name="bookTitle">
+
+    <label for="author"><b>Book Author</b></label>
+    <input type="text" placeholder="Author" name="author">
+
+    <label for="numOfPages"><b>Number of Pages</b></label>
+    <input type="text" placeholder="Pages" name="numOfPages">
+
+    <button type="submit" class="btn">Add</button>
+    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+  <p id="pText"></p>
+</div>
 </body>
 </html>
