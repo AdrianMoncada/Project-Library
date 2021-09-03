@@ -71,3 +71,12 @@
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
 } 
+
+/* book cards display styles */
+#book1 {
+  height: 200px;
+  width: 300px;
+  border-style: solid;
+  border-radius: 2px;
+  
+}
