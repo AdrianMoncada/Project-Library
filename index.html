@@ -9,43 +9,18 @@
   <title>Project: Library by Adrian Moncada</title>
 </head>
 <body>
-  <section class="main_container">
-  <!-- <input type="text" name="text" id="inputText"/>
-  <button onclick="addBookToLibrary();">Add</button> -->
+  <input type="text" name="text" id="bookName"/>
+  <input type="text" name="text" id="bookAuthor"/>
+  <input type="text" name="text" id="bookPages"/>
+  <button onclick="addBookToLibrary();">Add</button>
 
-  
-
-  <!-- form popup -->
-  <button class="open-button" onclick="openForm()">+</button>
-
-  <div class="row">
-    <div id="book1">
-      <span>x</span>
-      <h3 class="bookTitle"></h3>
-      <span class="bookAuthor">by:</span>
-      <span class="bookNumPages">Number of pages:</span>
+  <div id="mainContainer">
+    <div id="book0">
+      <h3 id="book0Name"></h3>
+      <span id="book0Author">by:</span>
+      <span id="book0Pages">Number of Pages:</span>
     </div>
 
-  <div class="form-popup" id="myForm">
-  <form class="form-container">
-    <label for="bookTitle"><b>Book Title</b></label>
-    <input type="text" placeholder="Title" name="bookTitle">
-
-    <label for="author"><b>Book Author</b></label>
-    <input type="text" placeholder="Author" name="author">
-
-    <label for="numOfPages"><b>Number of Pages</b></label>
-    <input type="text" placeholder="Pages" name="numOfPages">
-
-    <button type="submit" class="btn">Add</button>
-    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
-  </form >
-  <p id="pText"></p>
-
-<!-- Card display -->
-
-</div>
-</div>
-</section>
+  </div>
 </body>
 </html>
