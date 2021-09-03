@@ -1,5 +1,5 @@
 
-let myLibrary = [
+const myLibrary = [
   { 
     name: "Flowers for Algernon",
     author: "Daniel Keyes",
@@ -28,19 +28,4 @@ function addBookToLibrary() {
 }
 
 
-const book0Name = document.getElementById('book0Name');
-const book0Author = document.getElementById('book0Author');
-const book0Pages = document.getElementById('book0Pages');
 
-function displayBooks() { 
-for (let i = 0; i < myLibrary.length; i++) {
-  if (myLibrary != []) {
-    book0Name.innerText = myLibrary[i].name
-    book0Author.innerText = myLibrary[i].author
-    book0Pages.innerText += myLibrary[i].pages
-    return
-  }
-}
-}
-
-displayBooks()

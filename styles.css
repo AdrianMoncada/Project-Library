@@ -1,3 +1,7 @@
+#subContainer {
+  padding-top: 20px;
+}
+
 #mainContainer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -12,4 +16,17 @@
   border-radius: 0.5px;
   display: flex;
   flex-direction: column;
+}
+
+table {
+  width: 400px;
+}
+
+th {
+  text-align: left;
+}
+
+table, th, td {
+  border: 1px solid #000;
+  border-collapse: collapse
 }

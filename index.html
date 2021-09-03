@@ -9,17 +9,26 @@
   <title>Project: Library by Adrian Moncada</title>
 </head>
 <body>
+  <div>
   <input type="text" name="text" id="bookName"/>
   <input type="text" name="text" id="bookAuthor"/>
   <input type="text" name="text" id="bookPages"/>
   <button onclick="addBookToLibrary();">Add</button>
-
-  <div id="mainContainer">
-    <div id="book0">
-      <h3 id="book0Name"></h3>
-      <span id="book0Author">by:</span>
-      <span id="book0Pages">Number of Pages:</span>
-    </div>
+  <div id="subContainer">
+ <table>
+   <thead>
+     <tr>
+       <th>Title</th>
+       <th>Author</th>
+       <th>Pages</th>
+     </tr>
+   </thead>
+   <tr>
+     <td>Flowers for Algernon</td>
+     <td>Daniel Keyes</td>
+     <td>311</td>
+   </tr>
+ </table>
 
   </div>
 </body>
