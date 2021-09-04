@@ -1,16 +1,5 @@
 
-const myLibrary = [
-  { 
-    name: "Flowers for Algernon",
-    author: "Daniel Keyes",
-    pages: "311"
-  },
-  {
-    name: "Ender's Game",
-    author: "Orson Scott Card",
-    pages: "320" 
-  }
-];
+const myLibrary = [];
 
 
 function addBookToLibrary() {
@@ -38,7 +27,7 @@ function addBookToList(book) {
     <td>${book.name}</td>
     <td>${book.author}</td>
     <td>${book.pages}</td>
-    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    <td><a onclick="deleteItem()" href="#" class="btn btn-danger btn-sm delete">X</a></td>
   `;
 
   list.appendChild(row);
@@ -58,5 +47,6 @@ close.addEventListener('click', function() {
 document.getElementById('formElement').style.display = 'none';
 })
 
-
-
+function deleteItem() {
+  this.parentNode.parentNode.removeChild(this.parentNode);
+}
