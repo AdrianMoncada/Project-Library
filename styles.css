@@ -13,7 +13,7 @@
   height: 100px;
   width: 300px;
   border-style: outset;
-  border-radius: 0.5px;
+  border-radius: 1px;
   display: flex;
   flex-direction: column;
 }
