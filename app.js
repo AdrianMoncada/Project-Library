@@ -24,8 +24,21 @@ function addBookToLibrary() {
   var bookPages = document.getElementById('bookPages').value;
 
   var book1 = new Book(bookName, bookAuthor, bookPages)
-  myLibrary.push(book1)
+  addBookToList(book1)
 }
 
+function addBookToList(book) {
+  const list = document.querySelector('#book-list');
 
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+    <td>${book.title}</td>
+    <td>${book.author}</td>
+    <td>${book.isbn}</td>
+    <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+  `;
+
+  list.appendChild(row);
+}
 
