@@ -12,18 +12,20 @@ const myLibrary = [
   }
 ];
 
-function Book(name,author,pages) {
-  this.name = name 
-  this.author = author
-  this.pages = pages
-}
 
 function addBookToLibrary() {
+  function Book(name,author,pages) {
+    this.name = name 
+    this.author = author
+    this.pages = pages
+  }
+
   var bookName = document.getElementById('bookName').value;
   var bookAuthor = document.getElementById('bookAuthor').value;
   var bookPages = document.getElementById('bookPages').value;
 
   var book1 = new Book(bookName, bookAuthor, bookPages)
+  myLibrary.push(book1)
   addBookToList(book1)
 }
 
