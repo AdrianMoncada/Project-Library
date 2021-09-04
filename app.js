@@ -42,3 +42,10 @@ function addBookToList(book) {
   list.appendChild(row);
 }
 
+const button = document.getElementById('show')
+
+const hideform = document.getElementsByClassName('hideform')
+
+button.addEventListener('click', function() {
+document.getElementById('formElement').style.display = 'block';
+})

@@ -10,10 +10,22 @@
 </head>
 <body>
   <div>
-  <input type="text" name="text" id="bookName"/>
-  <input type="text" name="text" id="bookAuthor"/>
-  <input type="text" name="text" id="bookPages"/>
-  <button onclick="addBookToLibrary();">Add</button>
+    <div class="center hideform" id="formElement">
+      <button id="close" style="float: right;">X</button>
+      <form action="/action_page.php">
+          Book Title:<br>
+          <input type="text" name="text" id="bookName"/>
+          <br>
+          Book Author:<br>
+          <input type="text" name="text" id="bookAuthor"/>
+          <br>
+          Book Pages:<br>
+          <input type="text" name="text" id="bookPages"/>
+          <br>
+          <input type="submit" value="Submit">
+      </form>
+  </div>
+  <button id="show">Add Book</button>
   <div id="subContainer">
  <table>
    <thead>
