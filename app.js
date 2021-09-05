@@ -50,5 +50,6 @@ document.getElementById('show').style.display = 'block';
 })
 
 function deleteItem() {
-  this.parentNode.parentNode.removeChild(this.parentNode);
+  let node = document.getElementById("nested");
 }
+
