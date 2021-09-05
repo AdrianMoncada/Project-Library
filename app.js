@@ -39,12 +39,14 @@ const hideform = document.getElementsByClassName('hideform')
 
 button.addEventListener('click', function() {
 document.getElementById('formElement').style.display = 'block';
+document.getElementById('show').style.display = 'none';
 })
 
 const close = document.getElementById('close')
 
 close.addEventListener('click', function() {
 document.getElementById('formElement').style.display = 'none';
+document.getElementById('show').style.display = 'block';
 })
 
 function deleteItem() {
