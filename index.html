@@ -9,38 +9,5 @@
   <title>Project: Library by Adrian Moncada</title>
 </head>
 <body>
-  <button id="show">New Book</button>
-  <div>
-    <div class="center hideform" id="formElement">
-      <button id="close" style="float: right;">X</button>
-      <form onsubmit="return false;">
-          Book Title:<br>
-          <input type="text" name="text" id="bookName"/>
-          <br>
-          Book Author:<br>
-          <input type="text" name="text" id="bookAuthor"/>
-          <br>
-          Book Pages:<br>
-          <input type="text" name="text" id="bookPages"/>
-          <br>
-          <button onclick="addBookToLibrary()">add to Library</button>
-      </form>
-  </div>
-  
-  <div id="subContainer">
- <table>
-   <thead>
-     <tr>
-       <th>Title</th>
-       <th>Author</th>
-       <th>Pages</th>
-     </tr>
-   </thead>
-   <thead>
-     <tbody id="book-list"></tbody>
-   </thead>
- </table>
-
-  </div>
 </body>
 </html>
