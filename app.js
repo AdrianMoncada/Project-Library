@@ -37,7 +37,7 @@ class UI {
     <td>${book.author}</td>
     <td>${book.pages}</td>
     <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-    <td><a href="#" class="btn btn-success read">OK</a></td>
+    <td><a href="#" class="btn btn-success read">YES</a></td>
     `;
 
     list.appendChild(row);
@@ -51,10 +51,12 @@ class UI {
 
   static readBook(el) {
     let classes = el.classList;
-    let content = el.innerText;
-    console.log(content)
     let result = classes.toggle("btn-danger")
-    
+    if (el.innerHTML === "YES") {
+      el.innerHTML = "NO"
+    } else {
+      el.innerHTML = "YES"
+    }
   }
 
 
@@ -80,7 +82,7 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   const book = new Book(title,author,pages)
 
-  console.log(book)
+  
 
   // Add BOok
   UI.addBookToList(book);
@@ -98,11 +100,11 @@ document.querySelector('#book-list').addEventListener('click', (e)=>{
 
 // Form Popup
 function openForm() {
-  document.getElementById("myForm").style.display = "block";
+  document.getElementById('myForm').className = "d-block"
 }
 
 function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+  document.getElementById('myForm').className = "d-none"
 
 } 
 
