@@ -38,6 +38,7 @@ class UI {
     <td>${book.pages}</td>
     <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
     <td><a href="#" class="btn btn-success read">YES</a></td>
+    
     `;
 
     list.appendChild(row);
@@ -67,6 +68,37 @@ class UI {
   }
 }
 // Store Class
+
+class Store {
+  static getBooks() {
+    let books;
+    if(localStorage.getItem('books') === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem('books'));
+    }
+
+    return books;
+  }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+
+    books.push(book);
+
+    localStorage.setItem('books', JSON.stringify(books));
+  }
+
+  static removeBook(pages) {
+    const books = Store.getBooks();
+
+    books.forEach((book, index) => {
+      if(book.pages === pages) {
+        books.splice(index, 1);
+      }
+    })
+  }
+}
 
 // Event Display
 document.addEventListener('DOMContentLoaded', UI.displayBooks);
@@ -101,10 +133,14 @@ document.querySelector('#book-list').addEventListener('click', (e)=>{
 // Form Popup
 function openForm() {
   document.getElementById('myForm').className = "d-block"
+  document.getElementById('closeForm').className = "btn btn-primary d-block"
+  document.getElementById('open').className = "btn btn-primary d-none"
 }
 
 function closeForm() {
   document.getElementById('myForm').className = "d-none"
+  document.getElementById('open').className = "btn btn-primary d-block"
+  document.getElementById('closeForm').className = "btn btn-primary d-none"
 
 } 
 
