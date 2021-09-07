@@ -1,9 +1,9 @@
 // Book Class
 class Book {
-  constructor(title, author, isbn) {
+  constructor(title, author, pages) {
     this.title = title
     this.author = author
-    this.isbn = isbn
+    this.pages = pages
   }
 }
 // UI Class
@@ -13,12 +13,12 @@ class UI {
       {
         title: "Flowers for Algernon",
         author: "Daniel Keyes",
-        isbn: "311"
+        pages: "311"
       },
       {
         title: "Man's Search for Meaning",
         author: "Viktor Frankl",
-        isbn: "311"
+        pages: "311"
       }
     ];
 
@@ -35,8 +35,9 @@ class UI {
     row.innerHTML = `
     <td>${book.title}</td>
     <td>${book.author}</td>
-    <td>${book.isbn}</td>
+    <td>${book.pages}</td>
     <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+    <td><a href="#" class="btn btn-success read">OK</a></td>
     `;
 
     list.appendChild(row);
@@ -48,10 +49,19 @@ class UI {
     }
   }
 
+  static readBook(el) {
+    let classes = el.classList;
+    let content = el.innerText;
+    console.log(content)
+    let result = classes.toggle("btn-danger")
+    
+  }
+
+
   static clearFields() {
     document.querySelector('#title').value = '';
     document.querySelector('#author').value = '';
-    document.querySelector('#isbn').value = '';
+    document.querySelector('#pages').value = '';
   }
 }
 // Store Class
@@ -66,9 +76,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
   // Get form values
   const title = document.querySelector('#title').value;
   const author = document.querySelector('#author').value;
-  const isbn = document.querySelector('#isbn').value;
+  const pages = document.querySelector('#pages').value;
 
-  const book = new Book(title,author,isbn)
+  const book = new Book(title,author,pages)
 
   console.log(book)
 
@@ -83,4 +93,21 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 // Event remove book
 document.querySelector('#book-list').addEventListener('click', (e)=>{
   UI.deleteBook(e.target)
+})
+
+
+// Form Popup
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+
+} 
+
+// Toggle Read Status
+
+document.querySelector('#book-list').addEventListener('click', (e)=>{
+  UI.readBook(e.target)
 })
