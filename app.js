@@ -9,20 +9,8 @@ class Book {
 // UI Class
 class UI {
   static displayBooks() {
-    const StoredBooks = [
-      {
-        title: "Flowers for Algernon",
-        author: "Daniel Keyes",
-        pages: "311"
-      },
-      {
-        title: "Man's Search for Meaning",
-        author: "Viktor Frankl",
-        pages: "311"
-      }
-    ];
-
-    const books = StoredBooks;
+    
+    const books = Store.getBooks();
 
     books.forEach((book) => UI.addBookToList(book))
   }
@@ -97,6 +85,8 @@ class Store {
         books.splice(index, 1);
       }
     })
+
+    localStorage.setItem('books', JSON.stringify(books))
   }
 }
 
@@ -118,6 +108,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
   // Add BOok
   UI.addBookToList(book);
+
+  // Add BOok to Store
+  Store.addBook(book)
 
   // Clear Fields
   UI.clearFields();
