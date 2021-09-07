@@ -21,11 +21,12 @@ class UI {
     const row = document.createElement('tr');
 
     row.innerHTML = `
+    <td><a href="#" class="btn btn-success read">YES</a></td>
     <td>${book.title}</td>
     <td>${book.author}</td>
     <td>${book.pages}</td>
     <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
-    <td><a href="#" class="btn btn-success read">YES</a></td>
+    
     
     `;
 
@@ -119,7 +120,11 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 // Event remove book
 document.querySelector('#book-list').addEventListener('click', (e)=>{
+  // Remove book from UI
   UI.deleteBook(e.target)
+
+  // REMOVE book from the Store
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 })
 
 
